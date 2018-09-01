@@ -1,0 +1,128 @@
+
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>a frank portfolio.</title>
+		<meta property="og:title" content="a frank portfolio." />
+		<meta name="author" content="Frank Elavsky">
+
+		<meta name="description" content="welcome to my portfolio of data-driven experiences">
+		<meta property="og:description" content="welcome to my portfolio of data-driven experiences" />	
+
+		<link rel="SHORTCUT ICON" href="http://www.afrankportfolio.com/favicon.PNG" type="image/png" />
+		<link rel="icon" href="http://www.afrankportfolio.com/favicon.PNG" type="image/png" />
+		<meta property="og:image" content="http://www.afrankportfolio.com/preview.PNG" />
+
+		<meta property="og:url" content="http://www.afrankportfolio.com" />
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link href="https://fonts.googleapis.com/css?family=Roboto:100,400" rel="stylesheet">
+
+		<link rel="stylesheet" href="css/index.css">
+		<script src="js/jquery.js"></script>
+		<script src="js/d3.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+	</head>
+
+	<body>
+		<svg id='svg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 4500">
+		  <g id="background">
+		    <rect width="2000" height="4500" style="fill: #202021"/>
+		  </g>
+		  <g id="hot">
+		    <rect x="173.4" y="266" width="1035" height="1035" style="fill: #434345"/>
+		  </g>
+		  <g id="city">
+		    <rect x="1319.22" y="859" width="520.71" height="718" style="fill: #434345"/>
+		  </g>
+		  <g id="mass">
+		    <rect x="173.4" y="1413" width="790.78" height="791" style="fill: #434345"/>
+		  </g>
+		  <g id="jobs">
+		    <rect x="1073.38" y="1688" width="520.71" height="718" style="fill: #434345"/>
+		  </g>
+		  <g id="politics">
+		    <rect x="1006.56" y="2519.14" width="520.28" height="520.43" style="fill: #434345"/>
+		  </g>
+		  <g id="seismic">
+		    <rect x="834.48" y="3155.61" width="520.28" height="520.43" style="fill: #434345"/>
+		  </g>
+		  <g id="venn">
+		    <rect x="173" y="2317" width="718" height="520" style="fill: #434345"/>
+		  </g>
+		  <g id="research">
+		    <rect x="173" y="2951" width="551" height="399" style="fill: #434345"/>
+		  </g>
+		  <g id="tableau">
+		    <rect x="173.4" y="3460.07" width="399.12" height="398.66" style="fill: #434345"/>
+		  </g>
+		  <g id="logos">
+		    <rect x="683.4" y="3791.63" width="353.6" height="353.7" style="fill: #434345"/>
+		  </g>
+		  <g id="design">
+		    <rect x="173.4" y="3968.63" width="353.6" height="353.7" style="fill: #434345"/>
+		  </g>
+		  <g id="title">
+		    <text transform="translate(173 184.25)" style="font-size: 163px;fill: #fff;font-family: Roboto-Thin, Roboto">data-driven experiences</text>
+		  </g>
+		  <g id="subtitle">
+		    <text transform="translate(1319 323)" style="font-size: 76px;fill: #fff;font-family: Roboto-Thin, Roboto">
+			    	a portfolio of
+		    	<tspan style="font-family: Roboto-Regular, Roboto; font-weight:400" x="0" y="91.2">
+			    	interactives
+			    </tspan>
+			    <tspan x="0" y="182.4">
+				    and
+				</tspan>
+				<tspan style="font-family: Roboto-Regular, Roboto; font-weight:400" x="0" y="273.6">
+					visualizations
+				</tspan>
+				<tspan x="0" y="364.8" style="letter-spacing: -0.00537109375em">
+					by
+				</tspan>
+				<a href='/#description_about'><tspan class='name' style="font-family: Roboto-Regular, Roboto; font-weight:400" x="0" y="456">
+					frank elavsky
+				</tspan></a>
+			</text>
+		  </g>
+		</svg>
+		<div id="descriptions">
+			<div v-for="item in tilde.elements">
+				<div v-bind:id="'description_'+item.n" class="desc-wrapper">
+					<div class='banner'>
+						<a v-bind:href="[item.l ? item.l : '#description_'+item.n]" v-bind:target="[item.l ? '_blank' : '']"><img v-bind:src="'files/banners/'+item.n+'.PNG'" class='banner-content'/></a>
+						<div class='banner-bar'></div>
+						<div v-if="item.i" class='banner-info'>{{ item.i }}</div>
+					</div>
+					<div v-if="item.d" class='description'>{{ item.d }}</div>
+					<div>
+						<span v-if="item.l" class='link'><a v-bind:href="item.l" target="_blank">Try it out!</a></span>
+						<span v-if="item.l && item.r"> | </span>
+						<span v-if="item.r" class='research'><a v-bind:href="item.r" target="_blank">Research</a></span>
+						<span v-if="(item.r && item.s) || (item.l && item.s)"> | </span>
+						<span v-if="item.s" class='source'><a v-bind:href="item.s" target="_blank">Github</a></span>
+					</div>
+					<div>
+						<span v-if="item.a" class='audience'><b>Audience</b>: {{ item.a }}</span>
+						<span v-if="item.a && item.t"> | </span>
+						<span v-if="item.t" class='tools'><b>Tools</b>: {{ item.t }}</span>
+					</div>
+					<div v-if="item.x" class='extra' v-html="item.x"></div>
+					<div v-if="item.f" class='featured'><b>Featured at</b>: {{ item.f }}</div>
+					<br><br>
+				</div>
+			</div>
+		</div>
+
+	<script src="js/tilde.js"></script>
+
+	</body>
+</html>

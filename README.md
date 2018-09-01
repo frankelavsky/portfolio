@@ -1,2 +1,2 @@
-# portfolio
-My professional portfolio.
+# frank's portfolio
+Hi. Welcome to my portfolio, please enjoy.

@@ -1,0 +1,57 @@
+body {
+    font-size: calc(1.35vw + 1.35vh);
+    
+    font-family: 'Roboto', sans-serif;
+    font-weight:100;
+    color:white;
+    background: #202021;
+}
+.banner {
+    position:relative;
+}
+.banner-content {
+    width:100%;
+}
+
+.banner-bar {
+    background:black;
+    opacity:.6;
+    width:100%;
+    height:calc(5vw + 5vh);
+}
+.banner-info {
+    font-size:175%;
+}
+.banner-bar, .banner-info {
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+text {
+    font-family: 'Roboto', sans-serif;
+    font-weight:100;
+    fill:white;
+}
+.hover-panel:hover {
+    cursor:pointer;
+}
+.name {
+    fill:#FEF254;FFCA9D
+}
+.name:hover {
+    cursor:pointer;
+    fill:#FFCA9D;
+}
+b {
+    font-weight: 400;
+}
+a:link, a  {
+    color:#FEF254;
+}
+a:visited {
+    color:#898662;
+}
+.desc-wrapper {
+    text-align: center;
+}
